@@ -1,0 +1,17 @@
+{
+  "name": "reina",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.5"
+  }
+}

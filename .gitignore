@@ -1,0 +1,20 @@
+# Dependency
+node_modules/
+# Build Output
+dist/
+
+# Testing (Vitest)
+coverage/
+__snapshots__/
+
+tests/
+
+npm-debug.log*
+.eslintcache
+.parcel-cache
+
+# OS & IDE
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
