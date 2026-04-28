@@ -4,7 +4,7 @@ import Perceptron from "../models/linear/Perceptron.js";
 import DecisionTreeClassifier from "../models/tree/DecisionTreeClassifier.js";
 import GaussianNB from "../models/prob/GaussianNB.js";
 
-export const registry = {
+export const modelRegistry = {
   // Linear model
   LinearRegression: LinearRegression,
   logisticRegression: Logistic,
