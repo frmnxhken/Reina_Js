@@ -1,12 +1,186 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Deteksi Diabetes</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <script src="../dist/index.global.js"></script>
-    <script src="main.js"></script>
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Deteksi Diabetes</h1>
+        <p class="hero-description">
+          Analisis prediktif diabetes menggunakan model Decision Tree dengan
+          inferensi Reina.js
+        </p>
+        <a href="#to_form" class="hero-btn">
+          Deteksi Sekarang <i class="fa-solid fa-arrow-down"></i>
+        </a>
+      </div>
+    </header>
+
+    <div class="container" id="to_form">
+      <form>
+        <section class="section-group">
+          <div class="section-header">
+            <div class="badge blue">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <h3>Informasi Pribadi</h3>
+          </div>
+          <div class="form-grid">
+            <div class="input-wrapper">
+              <label>Usia</label>
+              <input type="number" name="Age" placeholder="Contoh: 25 thn" />
+            </div>
+            <div class="input-wrapper">
+              <label>Jumlah Kehamilan</label>
+              <input
+                type="number"
+                name="Pregnancies"
+                placeholder="Total kehamilan"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="section-group">
+          <div class="section-header">
+            <div class="badge indigo">
+              <i class="fa-solid fa-stethoscope"></i>
+            </div>
+            <h3>Pengukuran Klinis</h3>
+          </div>
+          <div class="form-grid">
+            <div class="input-wrapper">
+              <label>Kadar Glukosa</label>
+              <input type="number" name="Glucose" placeholder="mg/dL" />
+            </div>
+            <div class="input-wrapper">
+              <label>Tekanan Darah</label>
+              <input type="number" name="BloodPressure" placeholder="mm Hg" />
+            </div>
+            <div class="input-wrapper">
+              <label>Ketebalan Kulit (Trisep)</label>
+              <input type="number" name="SkinThickness" placeholder="mm" />
+            </div>
+            <div class="input-wrapper">
+              <label>Kadar Insulin</label>
+              <input type="number" name="Insulin" placeholder="mu U/ml" />
+            </div>
+          </div>
+        </section>
+
+        <section class="section-group">
+          <div class="section-header">
+            <div class="badge emerald">
+              <i class="fa-solid fa-microscope"></i>
+            </div>
+            <h3>Indikator Diagnostik</h3>
+          </div>
+          <div class="form-grid">
+            <div class="input-wrapper">
+              <label>Indeks Massa Tubuh (BMI)</label>
+              <input
+                type="number"
+                step="0.1"
+                name="BMI"
+                placeholder="Skor BMI"
+              />
+            </div>
+            <div class="input-wrapper">
+              <label>Riwayat Keturunan (Pedigree)</label>
+              <input
+                type="number"
+                step="0.001"
+                name="Pedigree"
+                placeholder="Skor Fungsi Pedigree"
+              />
+            </div>
+          </div>
+        </section>
+
+        <button type="submit" class="submit-btn">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Mulai Diagnosa
+        </button>
+      </form>
+
+      <div id="insight-positive" class="result-card positive">
+        <div class="result-header">
+          <div class="result-icon">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <div class="result-title-group">
+            <h2 id="status-text">Positif Diabetes</h2>
+            <p id="status-desc">
+              Hasil analisis berdasarkan data yang Anda masukkan.
+            </p>
+          </div>
+        </div>
+
+        <div class="tips-container">
+          <div class="tips-header">
+            <i class="fa-solid fa-hand-holding-medical"></i>
+            <span>Rekomendasi & Tindakan</span>
+          </div>
+          <ul id="tips-list">
+            <li>Segera hubungi tenaga medis untuk pemeriksaan lebih lanjut.</li>
+            <li>Monitor asupan gula harian Anda dengan ketat.</li>
+            <li>Lakukan aktivitas fisik secara teratur.</li>
+          </ul>
+        </div>
+
+        <button class="btn-reset" onclick="window.location.reload()">
+          <i class="fa-solid fa-arrow-rotate-left"></i> Cek Ulang
+        </button>
+      </div>
+
+      <div id="insight-negative" class="result-card negative">
+        <div class="result-header">
+          <div class="result-icon">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <div class="result-title-group">
+            <h2 id="status-text">Negatif (Normal)</h2>
+            <p id="status-desc">
+              Indikator kesehatan Anda berada dalam batas normal dataset.
+            </p>
+          </div>
+        </div>
+
+        <div class="tips-container">
+          <div class="tips-header">
+            <i class="fa-solid fa-shield-heart"></i>
+            <span>Saran Pemeliharaan</span>
+          </div>
+          <ul id="tips-list">
+            <li>
+              <strong>Pertahankan Gaya Hidup:</strong> Tetap konsumsi makanan
+              bergizi seimbang dan tinggi serat.
+            </li>
+            <li>
+              <strong>Olahraga Rutin:</strong> Jaga berat badan ideal dengan
+              aktivitas fisik minimal 150 menit seminggu.
+            </li>
+            <li>
+              <strong>Cek Berkala:</strong> Lakukan pemeriksaan kesehatan rutin
+              setidaknya 6-12 bulan sekali.
+            </li>
+          </ul>
+        </div>
+
+        <button class="btn-reset" onclick="window.location.reload()">
+          <i class="fa-solid fa-arrow-rotate-left"></i> Cek Ulang
+        </button>
+      </div>
+    </div>
+
+    <script src="reina.js"></script>
+    <script src="main.js" type="module"></script>
   </body>
 </html>

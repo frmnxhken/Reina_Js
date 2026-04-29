@@ -5,7 +5,3 @@ export function dot(a, b) {
   }
   return sum;
 }
-
-export function sigmoid(x) {
-  return 1 / (1 + Math.exp(-x));
-}
