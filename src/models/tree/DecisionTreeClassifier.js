@@ -1,30 +1,13 @@
-import BaseModel from "../../core/BaseModel.js";
+import TreeModel from "./TreeModel.js";
 
-class DecisionTreeClassifier extends BaseModel {
-  constructor(config) {
-    super(config);
-    this.tree = config.tree;
-  }
-
-  argMax(arr) {
-    return arr.indexOf(Math.max(...arr));
-  }
-
-  traversal(row, node) {
-    if (node.value !== undefined) {
-      return this.argMax(node.value);
-    }
-
-    if (row[node.feature] <= node.threshold) {
-      return this.traversal(row, node.left);
-    } else {
-      return this.traversal(row, node.right);
-    }
-  }
-
+class DecisionTreeClassifier extends TreeModel {
   predict(x) {
-    const pred = this.traversal(x, this.tree);
-    return pred;
+    const y = this.traversal(x, this.tree);
+    return y;
+  }
+
+  handleLeafFn(value) {
+    return this.argMax(value);
   }
 }
 

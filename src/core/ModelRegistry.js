@@ -3,6 +3,7 @@ import Logistic from "../models/linear/Logistic.js";
 import Perceptron from "../models/linear/Perceptron.js";
 import DecisionTreeClassifier from "../models/tree/DecisionTreeClassifier.js";
 import GaussianNB from "../models/prob/GaussianNB.js";
+import DecisionTreeRegressor from "../models/tree/DecisionTreeRegressor.js";
 
 export const modelRegistry = {
   // Linear model
@@ -12,6 +13,7 @@ export const modelRegistry = {
 
   // Tree Model
   DecisionTreeClassifier: DecisionTreeClassifier,
+  DecisionTreeRegressor: DecisionTreeRegressor,
 
   // Prob Model
   GaussianNB: GaussianNB,
