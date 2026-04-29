@@ -1,15 +1,8 @@
-import BaseModel from "../../core/BaseModel.js";
-import { dot } from "../../math/Linear.js";
+import LinearModel from "./LinearModel.js";
 
-class LinearRegression extends BaseModel {
-  constructor(config) {
-    super(config);
-    this.coef = config.coef;
-    this.intercept = config.intercept;
-  }
-
+class LinearRegression extends LinearModel {
   predict(x) {
-    const y = dot(x, this.coef) + this.intercept;
+    const y = this.score(x);
     return y;
   }
 }

@@ -1,16 +1,10 @@
-import BaseModel from "../../core/BaseModel.js";
-import { dot } from "../../math/Linear.js";
+import LinearModel from "./LinearModel.js";
 
-class Perceptron extends BaseModel {
-  constructor(config) {
-    super(config);
-    this.coef = config.coef;
-    this.intercept = config.intercept;
-  }
-
+class Perceptron extends LinearModel {
   predict(x) {
-    const z = dot(x, this.coef) + this.intercept;
-    return z < 0 ? 0 : 1;
+    const z = this.score(x);
+    const y = z < 0 ? 0 : 1;
+    return y;
   }
 }
 

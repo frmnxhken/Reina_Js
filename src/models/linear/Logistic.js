@@ -1,18 +1,17 @@
-import BaseModel from "../../core/BaseModel.js";
-import { dot, sigmoid } from "../../math/Linear.js";
+import LinearModel from "./LinearModel.js";
+import { sigmoid } from "../../math/Stats.js";
 
-class Logistic extends BaseModel {
+class Logistic extends LinearModel {
   constructor(config) {
     super(config);
-    this.coef = config.coef;
-    this.intercept = config.intercept;
-    this.threshold = 0.5;
+    this.threshold = config.threshold ?? 0.5;
   }
 
   predict(x) {
-    const z = dot(x, this.coef) + this.intercept;
+    const z = this.score(x);
     const activation = sigmoid(z);
-    return activation >= this.threshold ? 1 : 0;
+    const y = activation >= this.threshold ? 1 : 0;
+    return y;
   }
 }
 
