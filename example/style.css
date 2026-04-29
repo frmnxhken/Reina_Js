@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   background-color: #fafcff;
 }
 
@@ -412,6 +412,10 @@ select:focus {
   .hero-btn {
     padding: 12px 25px;
     font-size: 0.9rem;
+  }
+
+  .result-card {
+    padding: 10px;
   }
 
   .result-header {
