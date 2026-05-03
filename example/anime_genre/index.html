@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Prediksi Genre Anime</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1><span>ANIME CLASSIFIER</span></h1>
+        <p>
+          Prediksi genre anime berdasarkan sinopsis dengan model Logistic
+          Regression dan inferensi Reina Js
+        </p>
+
+        <form>
+          <div class="input-box">
+            <textarea
+              required
+              name="synopsis"
+              placeholder="Ketik sinopsis di sini..."
+            ></textarea>
+          </div>
+          <button class="btn-predict">
+            PREDICT GENRE <span style="font-size: 1.5rem">→</span>
+          </button>
+        </form>
+        <div class="stamp">REINA<br />CORE</div>
+      </div>
+      <div class="insight">
+        <p>Predict</p>
+        <h1><span id="genre">Action</span></h1>
+        <div class="probability"></div>
+        <button class="btn-reset" onclick="window.location.reload()">
+          Try Again
+        </button>
+      </div>
+    </div>
+
+    <script src="reina.js"></script>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>

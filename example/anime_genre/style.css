@@ -1,0 +1,213 @@
+:root {
+  --colorfull-gradient: linear-gradient(
+    135deg,
+    #4e8cff,
+    #9c63ff,
+    #ff6bcc,
+    #ffb14d
+  );
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+    url("https://i.pinimg.com/736x/f2/85/f9/f285f98047e3c1b453999e9625a23861.jpg");
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.card {
+  background: white;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  border-left: 5px solid #9c63ff;
+  padding: 40px;
+  position: relative;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+h1 span {
+  display: block;
+  background: var(--colorfull-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  font-size: 1rem;
+  color: #888;
+}
+
+.input-box {
+  margin-top: 30px;
+}
+
+textarea {
+  width: 100%;
+  background: white;
+  border: none;
+  border-bottom: 1px solid;
+  font-size: 1.1rem;
+  padding: 10px;
+  box-sizing: border-box;
+  min-height: 120px;
+  resize: none;
+  outline: none;
+  transition: 0.3s;
+}
+
+textarea:focus {
+  border-color: #9c63ff;
+}
+
+.btn-predict {
+  margin-top: 30px;
+  background: white;
+  color: black;
+  border: none;
+  padding: 15px 30px;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: 0.3s;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%);
+  text-transform: uppercase;
+}
+
+.btn-predict:hover {
+  background: var(--colorfull-gradient);
+  color: white;
+  transform: translateX(10px);
+}
+
+.stamp {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 80px;
+  height: 80px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  transform: rotate(-15deg);
+  background: var(--colorfull-gradient);
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.insight {
+  background: white;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  border-left: 5px solid #9c63ff;
+  padding: 40px;
+  display: none;
+}
+
+.insight.active {
+  display: block;
+}
+
+.insight > p {
+  color: black;
+  font-weight: bold;
+}
+
+.insight h1 {
+  margin-top: -10px;
+  margin-bottom: 40px;
+}
+
+.probability {
+  display: grid;
+}
+
+.probability div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.probability div p {
+  color: black;
+}
+
+.probability .percentage {
+  max-width: 300px;
+  color: white;
+  font-size: 1rem;
+  padding: 5px 10px;
+}
+
+.percentage.action {
+  background-color: #9c63ff;
+}
+
+.percentage.horror {
+  background-color: #4e8cff;
+}
+
+.percentage.sports {
+  background-color: #ffb14d;
+}
+
+.btn-reset {
+  margin-top: 30px;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  transition: 0.3s;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%);
+  text-transform: uppercase;
+}
+
+.btn-reset:hover {
+  background: var(--colorfull-gradient);
+  color: white;
+  transform: translateX(10px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
