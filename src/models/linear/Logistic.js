@@ -11,14 +11,14 @@ class Logistic extends LinearModel {
   predict(x) {
     const z = this.score(x);
 
-    // Multiclass
+    // Binary Class
     if (this.total_class === 2) {
       const activation = sigmoid(z);
       const y = activation >= this.threshold ? 1 : 0;
       return y;
     }
 
-    // Binary Class
+    // Multiclass
     const activation = softmax(z);
     const y = activation.indexOf(Math.max(...activation));
     return y;
