@@ -1,4 +1,4 @@
-export default class BasePreprocess {
+export default class BaseTransform {
   constructor(params = {}) {
     this.params = params;
   }

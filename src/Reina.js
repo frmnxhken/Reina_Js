@@ -8,7 +8,7 @@ export class Reina {
     if (!ModelClass) throw new Error(`Model not found: ${model}`);
 
     this.instance = new ModelClass(config?.model?.params || config);
-    this.pipeline = BuildPipeline(config?.preprocessing);
+    this.pipeline = BuildPipeline(config?.transform);
   }
 
   predict(x) {

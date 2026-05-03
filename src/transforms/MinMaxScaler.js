@@ -1,6 +1,6 @@
-import BasePreprocess from "../core/BasePreprocess.js";
+import BaseTransform from "../core/BaseTransform.js";
 
-class MinMaxScaler extends BasePreprocess {
+class MinMaxScaler extends BaseTransform {
   constructor({ min, max }) {
     super();
     this.min = min;

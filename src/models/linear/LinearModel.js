@@ -9,6 +9,13 @@ class LinearModel extends BaseModel {
   }
 
   score(x) {
+    if (Array.isArray(this.coef[0])) {
+      return this.coef.map((w, i) => {
+        const z = dot(x, w) + this.intercept[i];
+        return z;
+      });
+    }
+
     const z = dot(x, this.coef) + this.intercept;
     return z;
   }
